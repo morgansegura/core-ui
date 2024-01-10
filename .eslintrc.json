@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "src/components",
+    "plugin:storybook/recommended",
+    "plugin:storybook/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "rules": {
+    "import/order": [
+      "warn",
+      {
+        "pathGroups": [
+          {
+            "pattern": "~/utils",
+            "group": "internal"
+          },
+          {
+            "pattern": "~/hooks",
+            "group": "internal"
+          },
+          {
+            "pattern": "*.css",
+            "group": "type",
+            "patternOptions": {
+              "matchBase": true
+            },
+            "position": "before"
+          }
+        ],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          [
+            "parent",
+            "index",
+            "sibling"
+          ],
+          "type"
+        ],
+        "newlines-between": "always",
+        "warnOnUnassignedImports": true
+      }
+    ]
+  }
+}

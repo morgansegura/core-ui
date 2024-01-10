@@ -1,0 +1,34 @@
+{
+  "include": ["*.ts", "**/*.ts", "**/*.tsx", "rollup.config.mjs", "rollup.config.cjs"],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "src/**/*.test.tsx",
+    "src/**/*.stories.tsx",
+    "scripts"
+  ],
+  "compilerOptions": {
+    "types": ["vitest/globals"],
+    "target": "es5",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+
+    "lib": ["DOM", "DOM.Iterable", "ES2019"],
+    "jsx": "react",
+    "module": "ESNext",
+    "allowJs": true,
+    "declaration": true,
+    "declarationDir": "types",
+    "sourceMap": true,
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "emitDeclarationOnly": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"]
+    },
+  },
+}

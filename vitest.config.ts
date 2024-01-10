@@ -1,0 +1,20 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
+
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import tsconfigPaths from "vite-tsconfig-paths";
+
+export default defineConfig({
+  plugins: [react(), tsconfigPaths()],
+  test: {
+    globals: true,
+    environment: "jsdom",
+    // setupFiles: ["./test/setup-test-env.ts"],
+    // globalSetup: ["./test/global-test-env.ts"],
+    mockReset: true,
+    coverage: {
+      exclude: ["**/{mocks,__fixtures__,__tests__}/**", "**/types.ts"],
+    },
+  },
+});
